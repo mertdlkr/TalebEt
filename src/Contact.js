@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import logo from './logo.png';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -64,13 +65,17 @@ function Contact() {
     <div className="App">
       <header className="header">
         <div className="header-left">
-          <i className="fas fa-graduation-cap"></i>
-          <span>TalebEt</span>
+          <img 
+            src={logo} 
+            alt="TalebEt" 
+            className="header-logo" 
+            onClick={() => handleNavigation('/')}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
         <nav className="header-right">
-          <a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/'); }}>Ana Sayfa</a>
-          <a href="#nasil-calisir">Nasıl Çalışır?</a>
-          <a href="#hakkimizda">Hakkımızda</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/nasil-calisir'); }}>Nasıl Çalışır?</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/hakkimizda'); }}>Hakkımızda</a>
           <a href="/iletisim" className="active">İletişim</a>
           <button className="login-button" onClick={() => setShowLoginModal(true)}>Giriş Yap</button>
         </nav>
@@ -207,8 +212,8 @@ function Contact() {
             <h4>Hızlı Linkler</h4>
             <ul>
               <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/'); }}>Ana Sayfa</a></li>
-              <li><a href="#nasil-calisir">Nasıl Çalışır?</a></li>
-              <li><a href="#hakkimizda">Hakkımızda</a></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/nasil-calisir'); }}>Nasıl Çalışır?</a></li>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); handleNavigation('/hakkimizda'); }}>Hakkımızda</a></li>
               <li><a href="/iletisim">İletişim</a></li>
             </ul>
           </div>
